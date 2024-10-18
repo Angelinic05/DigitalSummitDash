@@ -1,0 +1,587 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:wght@788&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #000000;
+    --glow-violet: #760FFC;
+    --glow-object-grad: #ffd000;
+    --glow-violet-c: #AC11FD;
+    --text: #ffffff;
+    --containers: #001d0e;
+    --digital: #01ea6a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* font-size: helvetica; */
+    /* font-family: Montserrat, sans-serif; */
+    background-color: var(--background);
+    color: var(--text); /* Texto en blanco */
+}
+
+/* SIDENAV */
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background: var(--containers);
+    z-index: 100;
+    transition: all 0.5s ease;
+  }
+  .sidebar.close{
+    width: 78px;
+  }
+  .sidebar .logo-details{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar .logo-details i{
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .sidebar .logo-details .logo_name{
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+  }
+  .sidebar.close .logo-details .logo_name{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar .nav-links{
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+  }
+  .sidebar.close .nav-links{
+    overflow: visible;
+  }
+  .sidebar .nav-links::-webkit-scrollbar{
+    display: none;
+  }
+  .sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li:hover{
+    background: #1d1b31;
+  }
+  .sidebar .nav-links li .iocn-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar.close .nav-links li .iocn-link{
+    display: block
+  }
+  .sidebar .nav-links li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .sidebar .nav-links li.showMenu i.arrow{
+    transform: rotate(-180deg);
+  }
+  .sidebar.close .nav-links i.arrow{
+    display: none;
+  }
+  .sidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .sidebar .nav-links li a .link_name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+  }
+  .sidebar.close .nav-links li a .link_name{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar .nav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #1d1b31;
+    display: none;
+  }
+  .sidebar .nav-links li.showMenu .sub-menu{
+    display: block;
+  }
+  .sidebar .nav-links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  .sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+  }
+  .sidebar.close .nav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+  }
+  .sidebar.close .nav-links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li .sub-menu .link_name{
+    display: none;
+  }
+  .sidebar.close .nav-links li .sub-menu .link_name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+  }
+  .sidebar .nav-links li .sub-menu.blank{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar .nav-links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+ 
+  .sidebar .profile-details{
+    position: fixed;
+    bottom: 0;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1d1b31;
+    padding: 12px 0;
+    transition: all 0.5s ease;
+  }
+  .sidebar.close .profile-details{
+    background: none;
+  }
+  .sidebar.close .profile-details{
+    width: 78px;
+  }
+  .sidebar .profile-details .profile-content{
+    display: flex;
+    align-items: center;
+  }
+  .sidebar .profile-details img{
+    height: 52px;
+    width: 52px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 0 14px 0 12px;
+    background: #1d1b31;
+    transition: all 0.5s ease;
+  }
+  .sidebar.close .profile-details img{
+    padding: 10px;
+  }
+  .sidebar .profile-details .profile_name,
+  .sidebar .profile-details .job{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .sidebar.close .profile-details i,
+  .sidebar.close .profile-details .profile_name,
+  .sidebar.close .profile-details .job{
+    display: none;
+  }
+  .sidebar .profile-details .job{
+    font-size: 12px;
+  }
+  .home-section{
+    position: relative;
+    background: var(--containers);
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+  }
+
+
+  
+  .sidebar.close ~ .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+
+  .home-section{
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  .home-section .home-content .bx-menu,
+  .home-section .home-content .text{
+    color: #ffffff;
+    font-size: 35px;
+  }
+  .home-section .home-content .bx-menu{
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  .home-section .home-content .text{
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+
+.contenedor-titulo h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.home-content img{
+    width: 15%;
+    /* height: 5%; */
+    object-fit: cover;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* Contenedor principal ----------------------------------------*/
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 3000px;
+    margin: 20px auto;
+    padding-left: 90px;
+}
+
+.top-row {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+
+    text-align: center;
+}
+
+.bottom-row {
+    display: flex; /* Establece el diseño en fila */
+    flex: 2; /* Ocupa el doble de espacio que la fila superior */
+}
+
+.right-container {
+    flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
+    margin: 10px; /* Espacio entre contenedores */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid floralwhite; /*
+    flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
+    margin: 10px; /* Espacio entre contenedores */
+  
+}
+
+
+
+.container {
+    width: 100%; /* Cambiado a 100% para ser totalmente responsivo */
+    max-width: 100%; /* Se mantiene el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para las cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Cambiado a 100% para ser responsivo */
+    text-align: center;
+}
+
+.card h2 {
+    color: #00ff4c;
+    font-size: 1.3rem;
+}
+
+.timer {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Barra de progreso */
+.progress-container {
+    display: flex;
+    height: 40px;
+    width: 100%; /* Asegurarse de que la barra use el 100% del contenedor */
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    opacity: 0.5;
+    position: relative;
+}
+
+#lote1-segment {
+    background-color: #f9e560; /* Verde para el Lote 1 */
+}
+
+#lote2-segment {
+    background-color: #7a3f9b; /* Amarillo para el Lote 2 */
+}
+
+#lote3-segment {
+    background-color: #e60c6d; /* Rojo para el Lote 3 */
+}
+
+/* Estilos de texto dentro de la barra de progreso */
+.lote-label {
+    position: absolute;
+    width: 33.33%; /* Asegura que los textos estén dentro de su respectiva sección */
+    text-align: center;
+    color: white;
+    font-size: 1rem; /* Tamaño de fuente ajustado para ser más responsivo */
+}
+
+#lote1-segment .lote-label {
+    left: 33.33%;
+}
+
+#lote2-segment .lote-label {
+    left: 33.33%;
+}
+
+/* Segmentos activos */
+.active {
+    opacity: 1 !important;
+}
+
+.inactive {
+    opacity: 0.4;
+}
+
+
+
+.sales-channels-container {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--containers); /* Fondo suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sales-channels-table {
+  width: 100%;
+  border-collapse: collapse; /* Quita espacios entre celdas */
+  margin-top: 20px;
+}
+
+.sales-channels-table thead {
+  background-color: var(--digital); /* Color de fondo del encabezado */
+  color: white; /* Color del texto */
+}
+
+.sales-channels-table th, 
+.sales-channels-table td {
+  padding: 15px; /* Espaciado interno */
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+.sales-channels-table tr {
+  border-bottom: 1px solid #ddd; /* Línea separadora */
+}
+
+.sales-channels-table tr:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+}
+
+.sales-channels-table td {
+  color: #ffffff; /* Color del texto de las celdas */
+}
+
+
+.sales-data {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ffffff; /* Ajusta el color según tus necesidades */
+}
+
+.sales-data p {
+  margin: 5px 0; /* Espaciado entre los párrafos */
+}
+
+#salesChart {
+  max-width: 400px; /* Asegura que el gráfico no sea demasiado grande */
+  margin: 20px auto; /* Centra el gráfico */
+}
+
+/* Fila superior con 5 contenedores -------------------------------------------*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+
+    .sidebar.close {
+        left: -100px; /* Ocultar el menú en móviles */
+    }
+
+    .sidebar {
+        transition: left 0.2s ease;
+    }
+
+    .home-section {
+        transition: all 0.5s ease;
+        margin-left: 0; /* Ajustar el margen del contenido principal cuando el menú esté visible */
+    }
+
+    .timer {
+        font-size: 1.2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .card h2 {
+        font-size: 1.2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .progress-container {
+        height: 30px; /* Altura de la barra de progreso más pequeña en pantallas pequeñas */
+    }
+
+    .lote-label {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+    
+
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 480px) {
+    .sidebar.close {
+        left: -100px;
+    }
+
+    .sidebar {
+        transition: left 0.2s ease;
+    }
+
+    .home-section {
+        transition: all 0.5s ease;
+        margin-left: 0; 
+    }
+
+    .timer {
+        font-size: 1rem; /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+    }
+
+    .card h2 {
+        font-size: 1rem; /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+    }
+
+    .progress-container {
+        height: 25px; /* Altura de la barra de progreso más pequeña en pantallas muy pequeñas */
+    }
+
+    .lote-label {
+        font-size: 0.7rem; /* Tamaño de fuente más pequeño en pantallas muy pequeñas */
+    }
+    
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 430px) {
+    .sidebar.close {
+        left: -100px; /* Ocultar el menú en móviles */
+    }
+
+    .sidebar {
+        transition: left 0.2s ease;
+    }
+
+    .home-section {
+        transition: all 0.5s ease;
+        margin-left: 0; /* Ajustar el margen del contenido principal cuando el menú esté visible */
+    }
+
+
+    .contenedor-principal {
+        padding: 0;
+        /* padding-left: 70px; */
+        
+    }
+
+    .contenedor-principal {
+        padding: 0;
+        
+    }
+
+    .timer {
+        font-size: 1rem; /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+    }
+
+    .card h2 {
+        font-size: 1rem; /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+    }
+
+    .progress-container {
+        height: 25px; /* Altura de la barra de progreso más pequeña en pantallas muy pequeñas */
+    }
+
+    .lote-label {
+        font-size: 0.7rem; /* Tamaño de fuente más pequeño en pantallas muy pequeñas */
+    }
+}  

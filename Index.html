@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Summit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus'></i>
+          <span class="logo_name">Digital Summit</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <i class='bx bx-grid-alt'></i>
+              <span class="link_name">Dashboard</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Category</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="profile-details">
+              <div class="profile-content">
+                <!--<img src="image/profile.jpg" alt="profileImg">-->
+              </div>
+              <div class="name-job">
+                <div class="profile_name">Luque Acamdey</div>
+                <div class="job">Dashboard</div>
+              </div>
+              <i class='bx bx-log-out'></i>
+            </div>
+          </li>
+        </ul>
+    </div>
+    
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+        </div>
+    </section>
+
+    <div class="contenedor-principal">
+        <div class="container">
+            <!-- Card para el temporizador total -->
+            <div class="card">
+                <h2>Tiempo Restante Total</h2>
+                <div id="total-timer" class="timer">00d 00h 00m 00s</div>
+            </div>
+
+            <!-- Barra de progreso con nombres de lotes -->
+            <div class="progress-container">
+                <div id="lote1-segment" class="progress-segment">
+                    <span class="lote-label">Lote 1</span>
+                </div>
+                <div id="lote2-segment" class="progress-segment">
+                    <span class="lote-label">Lote 2</span>
+                </div>
+                <div id="lote3-segment" class="progress-segment">
+                    <span class="lote-label">Lote 3</span>
+                </div>
+            </div>
+
+            <!-- Card para el temporizador del lote actual -->
+            <div class="card">
+                <h2>Lote 2</h2>
+                <div id="current-lote-timer" class="timer">00h 00m 00s</div>
+            </div>
+        </div>
+
+        <div class="bottom-row">
+            <div class="left-container">
+                <div class="rosquilla">
+                    <canvas id="salesChart" width="400" height="400"></canvas>
+                </div>
+                <div class="data">
+                    <div class="sales-data">
+                        <p>Total Ventas: <span id="total-ventas">1000</span></p>
+                        <p>Ventas Vendidas: <span id="ventas-vendidas">0</span></p>
+                        <p>Ventas Faltantes: <span id="ventas-faltantes">0</span></p>
+                        <p>Facturación Total: <span id="facturacion-total">0</span></p>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="right-container">
+                <div class="sales-channels-container">
+                    <h2>Canales de Venta</h2>
+                    <table class="sales-channels-table">
+                        <thead>
+                            <tr>
+                                <th>Canal</th>
+                                <th>Fechas</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Campañas de compra</td>
+                                <td>10 al 18 octubre</td>
+                                <td>4 ventas</td>
+                            </tr>
+                            <tr>
+                                <td>Evergreen</td>
+                                <td>1 octubre - 31 octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Chat 1:1</td>
+                                <td>18 al 31 de octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Automatización Instagram</td>
+                                <td>18 a 31 de octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Llamadas estudiantes</td>
+                                <td>14 al 31 octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Correo</td>
+                                <td>17 al 31 de octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Conferencia Living Barranquilla</td>
+                                <td>24 octubre</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>TPL Live Edition</td>
+                                <td>31 octubre</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/e267099c50.js" crossorigin="anonymous"></script>
+    
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement; // Seleccionando el padre principal de la flecha
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+        async function fetchSalesData() {
+    try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbxelAb1T2YouRVipRxZGBGazlzgLg2llPaldmAa8flUbxMOIrdhNW6wUctGxfwutHZI/exec');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const salesData = await response.json();
+
+        // Muestra los datos en la consola
+        console.log('Ventas actuales:', salesData.currentSales);
+        console.log('Ventas totales:', salesData.totalSales);
+        console.log('Facturación total:', salesData.totalRevenue); // Suponiendo que tu script devuelve este dato
+
+        // Actualiza los datos en el HTML
+        document.getElementById('ventas-vendidas').innerText = salesData.currentSales; // Actualiza con A1
+        document.getElementById('facturacion-total').innerText = salesData.totalRevenue; // Actualiza con B1
+        document.getElementById('ventas-faltantes').innerText = 1000 - salesData.currentSales; // Calcula las ventas faltantes
+
+        // Datos para el gráfico
+        const totalVentas = 1000;
+        const ventasActuales = salesData.currentSales;
+        const ventasRestantes = totalVentas - ventasActuales;
+
+        // Crear el gráfico de rosquilla
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Ventas Actuales', 'Ventas Restantes'],
+                datasets: [{
+                    label: 'Total de Ventas',
+                    data: [ventasActuales, ventasRestantes],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)', // Color para ventas actuales
+                        'rgba(255, 99, 132, 0.6)'  // Color para ventas restantes
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de Ventas'
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error al obtener los datos de ventas:', error);
+    }
+}
+
+// Llama a la función para obtener los datos al cargar la página
+window.onload = fetchSalesData;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

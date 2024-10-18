@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.top-row {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.bottom-row {
+    display: flex; /* Establece el diseño en fila */
+    flex: 2; /* Ocupa el doble de espacio que la fila superior */
+}
+
+.left-container,
+.right-container {
+    flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde */
+    margin: 10px; /* Espacio entre contenedores */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+@media (max-width: 768px) {
+    .bottom-row {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .left-container,
+    .right-container {
+        margin: 10px 0; /* Espacio vertical entre contenedores */
+    }
+}
