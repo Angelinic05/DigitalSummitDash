@@ -275,16 +275,16 @@ body {
   }
 
 
-.contenedor-titulo h1 {
-    margin: 0;
-    font-size: 2em;
-}
+  .contenedor-titulo h1 {
+      margin: 0;
+      font-size: 2em;
+  }
 
-.home-content img{
-    width: 15%;
-    /* height: 5%; */
-    object-fit: cover;
-}
+  .home-content img{
+      width: 15%;
+      /* height: 5%; */
+      object-fit: cover;
+  }
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
@@ -298,18 +298,25 @@ body {
     padding-left: 90px;
 }
 
+.time{
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
 .top-row {
     flex: 1; /* Ocupa el espacio disponible */
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-
     text-align: center;
 }
 
 .bottom-row {
-    display: flex; /* Establece el diseño en fila */
-    flex: 2; /* Ocupa el doble de espacio que la fila superior */
+    padding: 0% 10% 0% 10%;
+    display: grid; /* Establece el diseño en fila */
+    grid-template-columns: 45% 55%;
 }
 
 .right-container {
@@ -320,13 +327,13 @@ body {
 
 .left-container {
     display: flex;
-    align-items: center;
+    align-items:center;
+    justify-content: space-around;
     border: 1px solid floralwhite; /*
     flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
     margin: 10px; /* Espacio entre contenedores */
   
 }
-
 
 
 .container {
@@ -360,7 +367,7 @@ body {
 .progress-container {
     display: flex;
     height: 40px;
-    width: 100%; /* Asegurarse de que la barra use el 100% del contenedor */
+    width: 80%; /* Asegurarse de que la barra use el 100% del contenedor */
     background-color: #e0e0e0;
     border-radius: 20px;
     overflow: hidden;
@@ -423,6 +430,7 @@ body {
   border-radius: 10px;
   background: var(--containers); /* Fondo suave */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
 }
 
 .sales-channels-table {
@@ -477,37 +485,94 @@ body {
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
 
-    .sidebar.close {
-        left: -100px; /* Ocultar el menú en móviles */
+  .sidebar.close {
+    left: -100px; /* Ocultar el menú en móviles */
+}
+
+  .sidebar {
+      transition: left 0.2s ease;
+  }
+
+  .home-section {
+      transition: all 0.5s ease;
+      margin-left: 0; /* Ajustar el margen del contenido principal cuando el menú esté visible */
     }
 
-    .sidebar {
-        transition: left 0.2s ease;
-    }
 
-    .home-section {
-        transition: all 0.5s ease;
-        margin-left: 0; /* Ajustar el margen del contenido principal cuando el menú esté visible */
+    .sidebar.close ~ .home-section{
+      left: 0;
+      width: calc(100% - 0px);
     }
+  
 
-    .timer {
-        font-size: 1.2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-    }
+  .contenedor-principal {
+      padding: 0;
+      /* padding-left: 70px; */
+      
+  }
 
-    .card h2 {
-        font-size: 1.2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-    }
+  .bottom-row {
+    padding: 0% 1% 0% 1%;
+}
 
-    .progress-container {
-        height: 30px; /* Altura de la barra de progreso más pequeña en pantallas pequeñas */
-    }
 
-    .lote-label {
-        font-size: 0.8rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  .left-container {
+    flex-direction: column;
+    height: 100%;
+}
+
+.right-container {
+  width: 90%;
+}
+ 
+    .sales-channels-container {
+      padding: 5px;
+      font-size: 0.8em;
     }
     
+    .sales-channels-table {
+      width: 100%;
+      margin-top: 5px;
+    }
+    
+    .sales-channels-table th, 
+    .sales-channels-table td {
+      padding: 5px;
+    }
 
+    #salesChart {
+      max-width: 250px; 
+    }
+
+    
+    .sales-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+      font-size: 0.8em;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media (max-width: 480px) {
@@ -541,6 +606,16 @@ body {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 430px) {

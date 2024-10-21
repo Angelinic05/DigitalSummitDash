@@ -49,10 +49,17 @@
 
     <div class="contenedor-principal">
         <div class="container">
-            <!-- Card para el temporizador total -->
-            <div class="card">
-                <h2>Tiempo Restante Total</h2>
-                <div id="total-timer" class="timer">00d 00h 00m 00s</div>
+            <div class="time">
+                <div class="card">
+                    <h2>TiempoTotal</h2>
+                    <div id="total-timer" class="timer">00d 00h 00m 00s</div>
+                </div>
+    
+                <div class="card">
+                    <h2>Lote 2</h2>
+                    <div id="current-lote-timer" class="timer">00h 00m 00s</div>
+                </div>
+
             </div>
 
             <!-- Barra de progreso con nombres de lotes -->
@@ -69,10 +76,7 @@
             </div>
 
             <!-- Card para el temporizador del lote actual -->
-            <div class="card">
-                <h2>Lote 2</h2>
-                <div id="current-lote-timer" class="timer">00h 00m 00s</div>
-            </div>
+
         </div>
 
         <div class="bottom-row">
@@ -80,14 +84,14 @@
                 <div class="rosquilla">
                     <canvas id="salesChart" width="400" height="400"></canvas>
                 </div>
-                <div class="data">
+
                     <div class="sales-data">
-                        <p>Total Ventas: <span id="total-ventas">1000</span></p>
-                        <p>Ventas Vendidas: <span id="ventas-vendidas">0</span></p>
-                        <p>Ventas Faltantes: <span id="ventas-faltantes">0</span></p>
-                        <p>Facturación Total: <span id="facturacion-total">0</span></p>
+                        <p><b>Total Ventas: </b><span id="total-ventas">1000</span></p>
+                        <p><b>Ventas Vendidas: </b><span id="ventas-vendidas">0</span></p>
+                        <p><b>Ventas Faltantes:</b> <span id="ventas-faltantes">0</span></p>
+                        <p><b>Facturación Total:</b> <span id="facturacion-total">0</span></p>
                     </div>
-                </div>
+
                 
                 
             </div>
@@ -105,43 +109,43 @@
                         <tbody>
                             <tr>
                                 <td>Campañas de compra</td>
-                                <td>10 al 18 octubre</td>
+                                <td>10Oct - 18Oct</td>
                                 <td>4 ventas</td>
                             </tr>
                             <tr>
                                 <td>Evergreen</td>
-                                <td>1 octubre - 31 octubre</td>
-                                <td>-</td>
+                                <td>1Oct - 31Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>Chat 1:1</td>
-                                <td>18 al 31 de octubre</td>
-                                <td>-</td>
+                                <td>18Oct - 31Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>Automatización Instagram</td>
-                                <td>18 a 31 de octubre</td>
-                                <td>-</td>
+                                <td>18Oct - 31Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>Llamadas estudiantes</td>
-                                <td>14 al 31 octubre</td>
-                                <td>-</td>
+                                <td>14Oct - 31Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>Correo</td>
-                                <td>17 al 31 de octubre</td>
-                                <td>-</td>
+                                <td>17Oct - 31Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>Conferencia Living Barranquilla</td>
-                                <td>24 octubre</td>
-                                <td>-</td>
+                                <td>24Oct</td>
+                                <td>0</td>
                             </tr>
                             <tr>
                                 <td>TPL Live Edition</td>
-                                <td>31 octubre</td>
-                                <td>-</td>
+                                <td>31Oct</td>
+                                <td>0</td>
                             </tr>
                         </tbody>
                     </table>
@@ -181,20 +185,22 @@
         const salesData = await response.json();
 
         // Muestra los datos en la consola
-        console.log('Ventas actuales:', salesData.currentSales);
-        console.log('Ventas totales:', salesData.totalSales);
-        console.log('Facturación total:', salesData.totalRevenue); // Suponiendo que tu script devuelve este dato
+        
 
         // Actualiza los datos en el HTML
         document.getElementById('ventas-vendidas').innerText = salesData.currentSales; // Actualiza con A1
-        document.getElementById('facturacion-total').innerText = salesData.totalRevenue; // Actualiza con B1
-        document.getElementById('ventas-faltantes').innerText = 1000 - salesData.currentSales; // Calcula las ventas faltantes
+        document.getElementById('ventas-faltantes').innerText = 1000 - salesData.currentSales; // Calcula las ventas faltantes // Calcula las ventas faltantes
+        document.getElementById('facturacion-total').innerText = '$' + salesData.totalSales;
+
 
         // Datos para el gráfico
         const totalVentas = 1000;
         const ventasActuales = salesData.currentSales;
         const ventasRestantes = totalVentas - ventasActuales;
 
+        console.log('Ventas actuales:', salesData.currentSales);
+        console.log('Ventas totales:', 1000);
+        console.log('Facturación total:', salesData.totalSales); // Suponiendo que tu script devuelve este dato
         // Crear el gráfico de rosquilla
         const ctx = document.getElementById('salesChart').getContext('2d');
         const salesChart = new Chart(ctx, {
