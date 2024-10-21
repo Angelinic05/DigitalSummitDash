@@ -616,25 +616,25 @@ body {
       padding: 0;
       /* padding-left: 70px; */
       
+    }
+
+    .bottom-row {
+      padding: 0% 1% 0% 1%;
   }
 
-  .bottom-row {
-    padding: 0% 1% 0% 1%;
-}
 
+    .left-container {
+      flex-direction: column;
+      height: 100%;
+  }
 
-  .left-container {
-    flex-direction: column;
-    height: 100%;
-}
-
-.right-container {
-  width: 90%;
-}
+  .right-container {
+    width: 90%;
+  }
  
     .sales-channels-container {
       padding: 5px;
-      font-size: 0.8em;
+      font-size: 0.6em;
     }
     
     .sales-channels-table {
@@ -648,7 +648,7 @@ body {
     }
 
     #salesChart {
-      max-width: 250px; 
+      max-width: 230px; 
     }
 
     
@@ -657,9 +657,8 @@ body {
       flex-direction: column;
       align-items: center;
       margin-top: 5px;
-      font-size: 0.8em;
+      font-size: 0.6em;
     }
-    
 }
 
 
