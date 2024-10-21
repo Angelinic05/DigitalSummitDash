@@ -56,7 +56,7 @@ function updateProgress() {
         // Establecer la parte activa del lote 2 con base en el progreso actual
         document.getElementById('lote1-segment').classList.add('active');
         document.getElementById('lote2-segment').classList.add('active');
-        document.getElementById('lote2-segment').style.background = `linear-gradient(to right, #7a3f9b ${lote2Progress}%, #be92d6 ${lote2Progress}%)`;
+        document.getElementById('lote2-segment').style.background = `linear-gradient(to right, #9b9b9b ${lote2Progress}%, #000000a6 ${lote2Progress}%)`;
         document.getElementById('lote3-segment').classList.add('inactive');
     } else {
         document.getElementById('lote1-segment').classList.add('active');
