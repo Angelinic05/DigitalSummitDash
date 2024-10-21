@@ -298,7 +298,7 @@ body {
 }
 
 .time{
-  border: 1px solid #ccc;
+
   display: flex;
   justify-content: space-around;
   width: 80%;
@@ -328,7 +328,7 @@ body {
     display: flex;
     align-items:center;
     justify-content: space-around;
-    border: 1px solid floralwhite; /*
+
     flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
     margin: 10px; /* Espacio entre contenedores */
   
