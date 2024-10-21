@@ -366,7 +366,7 @@ body {
 /* Barra de progreso */
 .progress-container {
   display: flex;
-  height: 40px;
+  height: 30px;
   width: 80%; /* Asegúrate de que la barra use el 100% del contenedor */
   background-color: #e0e0e0;
   border-radius: 20px;
@@ -387,15 +387,7 @@ body {
 }
 
 /* Barra de progreso */
-.progress-container {
-  display: flex;
-  height: 40px;
-  width: 80%; /* Asegúrate de que la barra use el 100% del contenedor */
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
+
 
 .progress-segment {
   display: flex;
@@ -464,7 +456,8 @@ body {
 
 .sales-channels-table thead {
   background-color: var(--digital); /* Color de fondo del encabezado */
-  color: white; /* Color del texto */
+  color: rgb(0, 0, 0); /* Color del texto */
+
 }
 
 .sales-channels-table th, 
@@ -532,21 +525,21 @@ body {
       padding: 0;
       /* padding-left: 70px; */
       
+    }
+
+    .bottom-row {
+      padding: 0% 1% 0% 1%;
   }
 
-  .bottom-row {
-    padding: 0% 1% 0% 1%;
-}
 
+    .left-container {
+      flex-direction: column;
+      height: 100%;
+  }
 
-  .left-container {
-    flex-direction: column;
-    height: 100%;
-}
-
-.right-container {
-  width: 90%;
-}
+  .right-container {
+    width: 90%;
+  }
  
     .sales-channels-container {
       padding: 5px;

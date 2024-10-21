@@ -82,7 +82,7 @@
         <div class="bottom-row">
             <div class="left-container">
                 <div class="rosquilla">
-                    <canvas id="salesChart" width="400" height="400"></canvas>
+                    <canvas id="salesChart" ></canvas>
                 </div>
 
                     <div class="sales-data">
@@ -184,23 +184,16 @@
         }
         const salesData = await response.json();
 
-        // Muestra los datos en la consola
-        
-
         // Actualiza los datos en el HTML
-        document.getElementById('ventas-vendidas').innerText = salesData.currentSales; // Actualiza con A1
-        document.getElementById('ventas-faltantes').innerText = 1000 - salesData.currentSales; // Calcula las ventas faltantes // Calcula las ventas faltantes
+        document.getElementById('ventas-vendidas').innerText = salesData.currentSales; 
+        document.getElementById('ventas-faltantes').innerText = 1000 - salesData.currentSales; 
         document.getElementById('facturacion-total').innerText = '$' + salesData.totalSales;
-
 
         // Datos para el gráfico
         const totalVentas = 1000;
         const ventasActuales = salesData.currentSales;
         const ventasRestantes = totalVentas - ventasActuales;
 
-        console.log('Ventas actuales:', salesData.currentSales);
-        console.log('Ventas totales:', 1000);
-        console.log('Facturación total:', salesData.totalSales); // Suponiendo que tu script devuelve este dato
         // Crear el gráfico de rosquilla
         const ctx = document.getElementById('salesChart').getContext('2d');
         const salesChart = new Chart(ctx, {
@@ -211,14 +204,12 @@
                     label: 'Total de Ventas',
                     data: [ventasActuales, ventasRestantes],
                     backgroundColor: [
-                        '#01ea6a', // Color para ventas actuales
-                        '#9b9b9b'  // Color para ventas restantes
+                        '#01ea6a', // Verde para ventas actuales
+                        '#9b9b9b'  // Naranja para ventas restantes
                     ],
-                    borderColor: [
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 99, 132, 1)'
-                    ],
-                    borderWidth: 1
+                    borderColor: '#ffffff', // Color del borde
+                    borderWidth: 2
+                    
                 }]
             },
             options: {
@@ -226,10 +217,35 @@
                 plugins: {
                     legend: {
                         position: 'top',
+                        labels: {
+                            boxWidth: 20,
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
                     },
                     title: {
                         display: true,
-                        text: 'Distribución de Ventas'
+                        text: 'Distribución de Ventas',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                },
+                cutout: '40%', // Tamaño del centro de la rosquilla
+                elements: {
+                    arc: {
+                        borderWidth: 2,
+                        borderColor: '#ffffff' // Color del borde
                     }
                 }
             }
