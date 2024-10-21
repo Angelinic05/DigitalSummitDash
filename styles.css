@@ -535,12 +535,10 @@ body {
     .left-container {
       flex-direction: column;
       height: 100%;
+      
   }
 
-  .right-container {
-    width: 90%;
-  }
- 
+
     .sales-channels-container {
       padding: 5px;
       font-size: 0.8em;
@@ -626,14 +624,15 @@ body {
     .left-container {
       flex-direction: column;
       height: 100%;
+      border-top: 3px solid rgb(27, 27, 27);
   }
 
-  .right-container {
-    width: 90%;
-  }
+    .right-container {
+      width: 95%;
+      border-top: 3px solid rgb(27, 27, 27);
+    }
  
     .sales-channels-container {
-      padding: 5px;
       font-size: 0.8em;
     }
     
