@@ -328,7 +328,6 @@ body {
     display: flex;
     align-items:center;
     justify-content: space-around;
-
     flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
     margin: 10px; /* Espacio entre contenedores */
   
@@ -490,9 +489,10 @@ body {
 }
 
 #salesChart {
-  max-width: 400px; /* Asegura que el gráfico no sea demasiado grande */
-  margin: 20px auto; /* Centra el gráfico */
+  width: 400px; /* Asegura que el gráfico no sea demasiado grande */
+  margin: 10px auto; /* Centra el gráfico */
 }
+
 
 /* Fila superior con 5 contenedores -------------------------------------------*/
 
@@ -612,10 +612,10 @@ body {
     }
   
 
-  .contenedor-principal {
-      padding: 0;
-      /* padding-left: 70px; */
-      
+      .bottom-row {
+        padding: 0% 10% 0% 10%;
+        display: flex; /* Establece el diseño en fila */
+        flex-direction: column;
     }
 
     .bottom-row {
@@ -634,7 +634,7 @@ body {
  
     .sales-channels-container {
       padding: 5px;
-      font-size: 0.5em;
+      font-size: 0.8em;
     }
     
     .sales-channels-table {
@@ -657,7 +657,7 @@ body {
       flex-direction: column;
       align-items: center;
       margin-top: 0;
-      font-size: 0.5em;
+      font-size: 0.8em;
     }
 }
 

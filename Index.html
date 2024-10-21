@@ -110,7 +110,7 @@
                             <tr>
                                 <td>Campañas de compra</td>
                                 <td>10Oct - 18Oct</td>
-                                <td>4 ventas</td>
+                                <td>4</td>
                             </tr>
                             <tr>
                                 <td>Evergreen</td>
@@ -200,6 +200,7 @@
             type: 'doughnut',
             data: {
                 labels: ['Ventas Actuales', 'Ventas Restantes'],
+                color: 'white',
                 datasets: [{
                     label: 'Total de Ventas',
                     data: [ventasActuales, ventasRestantes],
@@ -208,7 +209,7 @@
                         '#9b9b9b'  // Naranja para ventas restantes
                     ],
                     borderColor: '#ffffff', // Color del borde
-                    borderWidth: 2
+                    borderWidth: 3
                     
                 }]
             },
@@ -228,6 +229,7 @@
                     title: {
                         display: true,
                         text: 'Distribución de Ventas',
+                        color: 'white',
                         font: {
                             size: 18,
                             weight: 'bold'
@@ -245,7 +247,7 @@
                 elements: {
                     arc: {
                         borderWidth: 2,
-                        borderColor: '#ffffff' // Color del borde
+                        borderColor: 'white'
                     }
                 }
             }
