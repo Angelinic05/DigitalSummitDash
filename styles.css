@@ -479,6 +479,7 @@ body {
 .sales-channels-table td:first-child {
   text-align: left; /* Alinea la primera columna a la izquierda */
   width: 35%;
+  padding-left: 7%;
 }
 
 .sales-channels-table tr:hover {
