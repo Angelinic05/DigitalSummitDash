@@ -347,6 +347,13 @@ body {
   font-size: 1.5rem
 }
 
+.label-time{
+  display: flex;
+  font-weight: bold;
+  gap: 16px;
+
+}
+
 
 
 .labels{
@@ -388,7 +395,7 @@ body {
 
 .card h2 {
     color: #00FF8C;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 .card img{
@@ -404,7 +411,7 @@ body {
 /* Barra de progreso */
 /* Barra de progreso */
 .progress-container {
-  margin-top: 1%;
+  margin-top: 2%;
   display: flex;
   height: 30px;
   width: 90%; /* Asegúrate de que la barra use el 100% del contenedor */
