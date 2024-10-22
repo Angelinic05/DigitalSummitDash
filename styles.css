@@ -324,7 +324,7 @@ body {
 .right-container {
     flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
     margin: 10px; /* Espacio entre contenedores */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    
 }
 
 .left-container {
@@ -445,8 +445,6 @@ body {
 
 .sales-channels-container {
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-size: 1em;
 }
 
@@ -472,8 +470,14 @@ body {
   text-align: center;
 }
 
-.sales-channels-table tr {
-  border-bottom: 1px solid #ddd; /* Línea separadora */
+.sales-channels-table td {
+  padding: 15px; /* Espaciado interno */
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.sales-channels-table td:first-child {
+  text-align: left; /* Alinea la primera columna a la izquierda */
 }
 
 .sales-channels-table tr:hover {
