@@ -450,6 +450,10 @@ body {
   font-size: 1em;
 }
 
+.sales-channels-container h2{
+  text-align: center;
+}
+
 .sales-channels-table {
   width: 100%;
   border-collapse: collapse; /* Quita espacios entre celdas */
