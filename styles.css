@@ -523,7 +523,7 @@ body {
 }
 
 #salesChart {
-  width: 350px; /* Asegura que el gráfico no sea demasiado grande */
+  width: 320px; /* Asegura que el gráfico no sea demasiado grande */
   margin: 10px auto; /* Centra el gráfico */
 }
 
