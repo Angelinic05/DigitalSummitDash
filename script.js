@@ -17,7 +17,12 @@ function updateProgress() {
         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        return `${days}:${hours}:${minutes}:${seconds}`;
+        const formattedDays = days.toString().padStart(2, '0');
+        const formattedHours = hours.toString().padStart(2, '0');
+        const formattedMinutes = minutes.toString().padStart(2, '0');
+        const formattedSeconds = seconds.toString().padStart(2, '0');
+
+        return `${formattedDays} : ${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`;
     }
 
     // Tiempo restante total hasta el 2 de diciembre
