@@ -328,17 +328,21 @@ body {
 
 .left-container {
     display: flex;
+    flex-direction: column;
     align-items:center;
-    justify-content: space-around;
-    flex: 1; /* Cada contenedor ocupará el 50% del espacio disponible */
+    justify-content: center;
+    text-align: center;
     margin: 10px; /* Espacio entre contenedores */
   
+}
+
+.rosq-data{
+  display: flex;
 }
 
 
 .container {
     padding: 1%;
-    background-color: #191919;
     width: 100%; /* Cambiado a 100% para ser totalmente responsivo */
     max-width: 100%; /* Se mantiene el ancho máximo */
     display: flex;
@@ -499,9 +503,13 @@ body {
 
 
 .sales-data {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   font-size: 16px;
   color: #ffffff; /* Ajusta el color según tus necesidades */
+  align-items: center;
+  justify-content: center;
 }
 
 .sales-data p {

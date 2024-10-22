@@ -71,7 +71,7 @@
                     <span class="lote-label" style="color:#00ff7f;">Lote 1</span>
                 </div>
                 <div id="lote2-segment" class="progress-segment">
-                    <span class="lote-label" style="color:#00ff7f;">Lote 2</span>
+                    <span class="lote-label" style="color:#4d4d4d;">Lote 2</span>
                 </div>
                 <div id="lote3-segment" class="progress-segment">
                     <span class="lote-label" style="color: #00ff7f;">Lote 3</span>
@@ -84,19 +84,20 @@
 
         <div class="bottom-row">
             <div class="left-container">
-                <div class="rosquilla">
-                    <canvas id="salesChart" ></canvas>
-                </div>
-
-                    <div class="sales-data">
-                        <p><b>Total Ventas: </b><span id="total-ventas">1000</span></p>
-                        <p><b>Ventas Vendidas: </b><span id="ventas-vendidas">0</span></p>
-                        <p><b>Ventas Faltantes:</b> <span id="ventas-faltantes">0</span></p>
-                        <p><b>Facturación Total:</b> <span id="facturacion-total">0</span></p>
+                <div class="rosq-data">
+                    <div class="rosquilla">
+                        <canvas id="salesChart" ></canvas>
                     </div>
-
-                
-                
+                    <div class="sales-data">
+                        <p style="font-size: 1.5rem;"><b>META TICKETS: <span id="total-ventas" style="color: #00FF8C;">1000</b></span></p>
+                        <br>
+                        <p style="font-size: 1.2rem;"><b>TICKETS VENDIDOS <span id="ventas-vendidas" style="color: #00FF8C;">0</b></span></p>
+                        <p style="font-size: 1.2rem;"><b>TICKETS RESTANTES <span id="ventas-faltantes" style="color: #00BEBE;">0</b></span></p>
+                    </div>
+                </div>
+                <div class="facturacion">
+                    <p style="font-size: 1.5rem;"><b>FACTURACION ACTUAL <span id="facturacion-total" style="color: #00FF8C;">0</b></span></p>      
+                </div>  
             </div>
             <div class="right-container">
                 <div class="sales-channels-container">
@@ -235,9 +236,9 @@
                     title: {
                         display: true,
                         text: 'Distribución de Ventas',
-                        color: 'white',
+                        color: '#00ff7f',
                         font: {
-                            size: 18,
+                            size: 30,
                             weight: 'bold'
                         }
                     },
