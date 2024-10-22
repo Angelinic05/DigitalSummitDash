@@ -85,6 +85,16 @@
         <div class="bottom-row">
             <div class="left-container">
                 <h2>DISTRIBUCION DE VENTAS</h2>
+                <div class="labels">
+                    <div class="ven">
+                        <div class="verde"></div>
+                        <p>VENTAS ACTUALES</p>
+                    </div>
+                    <div class="ven">
+                        <div class="azul"></div>
+                        <p>VENTAS RESTANTES</p>
+                    </div>
+                </div>
                 <div class="rosq-data">
                     <div class="rosquilla">
                         <canvas id="salesChart" ></canvas>
@@ -204,7 +214,7 @@
 const salesChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Ventas Actuales', 'Ventas Restantes'],
+        // labels: ['Ventas Actuales', 'Ventas Restantes'],
         datasets: [{
             label: 'Total de Ventas',
             data: [ventasActuales, ventasRestantes],
@@ -221,31 +231,31 @@ const salesChart = new Chart(ctx, {
     },
     options: {
         responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-                labels: {
-                    usePointStyle: true, // Cambia a estilo de punto
-                    pointStyle: 'circle', // Establece el estilo como círculo
-                    pointRadius: 5, // Radio del punto
-                    pointBorderColor: 'white', // Color del borde del punto
-                    pointBackgroundColor: 'rgba(0, 0, 0, 0)', // Color de relleno del punto (transparente)
-                    font: {
-                        size: 14,
-                        weight: 'bold',
-                        color: 'white' // Color del texto
-                    }
-                },
-                padding: 30 // Agrega un padding de 20 pixels entre los labels y la rosquilla
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(tooltipItem) {
-                        return tooltipItem.label + ': ' + tooltipItem.raw;
-                    }
-                }
-            }
-        },
+        // plugins: {
+        //     legend: {
+        //         position: 'top',
+        //         labels: {
+        //             usePointStyle: true, // Cambia a estilo de punto
+        //             pointStyle: 'circle', // Establece el estilo como círculo
+        //             pointRadius: 5, // Radio del punto
+        //             pointBorderColor: 'white', // Color del borde del punto
+        //             pointBackgroundColor: 'rgba(0, 0, 0, 0)', // Color de relleno del punto (transparente)
+        //             font: {
+        //                 size: 14,
+        //                 weight: 'bold',
+        //                 color: 'white' // Color del texto
+        //             }
+        //         },
+        //         padding: 30 // Agrega un padding de 20 pixels entre los labels y la rosquilla
+        //     },
+        //     tooltip: {
+        //         callbacks: {
+        //             label: function(tooltipItem) {
+        //                 return tooltipItem.label + ': ' + tooltipItem.raw;
+        //             }
+        //         }
+        //     }
+        // },
         cutout: '40%', // Tamaño del centro de la rosquilla
         elements: {
             arc: {
