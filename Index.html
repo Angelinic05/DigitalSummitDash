@@ -84,6 +84,7 @@
 
         <div class="bottom-row">
             <div class="left-container">
+                <h2>DISTRIBUCION DE VENTAS</h2>
                 <div class="rosq-data">
                     <div class="rosquilla">
                         <canvas id="salesChart" ></canvas>
@@ -236,15 +237,6 @@ const salesChart = new Chart(ctx, {
                     }
                 },
                 padding: 30 // Agrega un padding de 20 pixels entre los labels y la rosquilla
-            },
-            title: {
-                display: true,
-                text: 'Distribución de Ventas',
-                color: '#00ff7f',
-                font: {
-                    size: 30,
-                    weight: 'bold'
-                }
             },
             tooltip: {
                 callbacks: {
