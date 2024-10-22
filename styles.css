@@ -355,19 +355,6 @@ body {
   width: 50%;
 }
 
-.azul, .verde{
-  width: 7%;
-  height: 30%;
-  border-radius: 50%;
-}
-
-.verde{
-  border: 4px solid #00FF8C;
-}
-
-.azul{
-  border: 4px solid #00BEBE;
-}
 
 
 .container {
@@ -620,6 +607,10 @@ body {
       margin-top: 5px;
       font-size: 0.8em;
     }
+
+    .azul, .verde{
+      width: 15%;
+    }
 }
 
 
@@ -718,6 +709,9 @@ body {
       margin-top: 0;
       font-size: 0.8em;
     }
+    .azul, .verde{
+      width: 6%;
+    }
 }
 
 
@@ -771,5 +765,10 @@ body {
 
     .lote-label {
         font-size: 0.7rem; /* Tamaño de fuente más pequeño en pantallas muy pequeñas */
+    }
+
+    .azul, .verde{
+      width: 15%;
+      height: 30%;
     }
 }  
