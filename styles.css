@@ -608,9 +608,7 @@ body {
       font-size: 0.8em;
     }
 
-    .azul, .verde{
-      width: 15%;
-    }
+
 }
 
 
@@ -709,9 +707,7 @@ body {
       margin-top: 0;
       font-size: 0.8em;
     }
-    .azul, .verde{
-      width: 6%;
-    }
+
 }
 
 
@@ -767,8 +763,5 @@ body {
         font-size: 0.7rem; /* Tamaño de fuente más pequeño en pantallas muy pequeñas */
     }
 
-    .azul, .verde{
-      width: 15%;
-      height: 30%;
-    }
+
 }  
