@@ -332,13 +332,22 @@ body {
     justify-content: center;
     text-align: center;
     margin: 10px; /* Espacio entre contenedores */
-  
 }
 
 .rosq-data{
   display: flex;
   gap: 5%;
 }
+
+.sales-data p {
+  font-size: 1.5rem
+}
+
+.facturacion p {
+  font-size: 1.5rem
+}
+
+
 
 .labels{
   width: 80%;
@@ -661,8 +670,12 @@ body {
   
 
     .bottom-row {
+      display: flex;
+      flex-direction: column;
       padding: 0% 1% 0% 1%;
   }
+
+
 
 
     .left-container {
@@ -670,6 +683,31 @@ body {
       height: 100%;
       border-top: 3px solid rgb(27, 27, 27);
   }
+
+    
+  .rosq-data{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+  }
+
+  .sales-data p {
+    font-size: 1rem
+  }
+
+  .facturacion p {
+    font-size: 1rem
+  }
+
+  .ven{
+    gap: 1px;
+    width: 100%;
+  }
+
+  .ven p{
+    font-size: 0.6rem
+  }
+  
 
     .right-container {
       width: 95%;
@@ -691,7 +729,7 @@ body {
     }
 
     #salesChart {
-      max-width: 230px; 
+      max-width: 200px; 
       margin: 0px auto; /* Centra el gráfico */
     }
 
