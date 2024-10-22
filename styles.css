@@ -748,6 +748,11 @@ body {
       font-size: 0.8em;
     }
 
+    .label-time{
+      gap: 5px;
+    
+    }
+    
 }
 
 
