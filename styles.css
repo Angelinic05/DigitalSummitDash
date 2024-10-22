@@ -337,6 +337,7 @@ body {
 
 .rosq-data{
   display: flex;
+  gap: 5%;
 }
 
 .labels{
