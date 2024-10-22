@@ -412,15 +412,15 @@ body {
 }
 
 #lote1-segment {
-  background-color: #9b9b9b; /* Verde */
+  background-color: #4d4d4d; /* Verde */
 }
 
 #lote2-segment {
-  background-color: #FF9800; /* Naranja */
+  background-color: #00ff7f; /* Naranja */
 }
 
 #lote3-segment {
-  background-color: #005024; /* Rojo */
+  background-color: #008f4d; /* Rojo */
 }
 
 /* Estilos de texto dentro de la barra de progreso */
