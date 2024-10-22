@@ -377,7 +377,7 @@ body {
   margin-top: 1%;
   display: flex;
   height: 30px;
-  width: 80%; /* Asegúrate de que la barra use el 100% del contenedor */
+  width: 90%; /* Asegúrate de que la barra use el 100% del contenedor */
   background-color: #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
