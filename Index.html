@@ -200,65 +200,69 @@
 
         // Crear el gráfico de rosquilla
         const ctx = document.getElementById('salesChart').getContext('2d');
-        const salesChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Ventas Actuales', 'Ventas Restantes'],
-                color: 'white',
-                datasets: [{
-                    label: 'Total de Ventas',
-                    data: [ventasActuales, ventasRestantes],
-                    backgroundColor: [
-                        '#00FF8C', // Verde para ventas actuales
-                        '#00BEBE'  // Naranja para ventas restantes
-                    ],
-                    borderColor:[
-                        '#00FF8C', // Verde para ventas actuales
-                        '#00BEBE'  // Naranja para ventas restantes
-                    ],
-                    borderWidth: 3
-                    
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            boxWidth: 20,
-                            font: {
-                                size: 14,
-                                weight: 'bold'
-                            }
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Distribución de Ventas',
-                        color: '#00ff7f',
-                        font: {
-                            size: 30,
-                            weight: 'bold'
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw;
-                            }
-                        }
+const salesChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Ventas Actuales', 'Ventas Restantes'],
+        datasets: [{
+            label: 'Total de Ventas',
+            data: [ventasActuales, ventasRestantes],
+            backgroundColor: [
+                '#00FF8C', // Verde para ventas actuales
+                '#00BEBE'  // Naranja para ventas restantes
+            ],
+            borderColor: [
+                '#00FF8C', // Verde para ventas actuales
+                '#00BEBE'  // Naranja para ventas restantes
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    usePointStyle: true, // Cambia a estilo de punto
+                    pointStyle: 'circle', // Establece el estilo como círculo
+                    pointRadius: 5, // Radio del punto
+                    pointBorderColor: 'white', // Color del borde del punto
+                    pointBackgroundColor: 'rgba(0, 0, 0, 0)', // Color de relleno del punto (transparente)
+                    font: {
+                        size: 14,
+                        weight: 'bold',
+                        color: 'white' // Color del texto
                     }
                 },
-                cutout: '40%', // Tamaño del centro de la rosquilla
-                elements: {
-                    arc: {
-                        borderWidth: 2,
-                        borderColor: 'white'
+                padding: 30 // Agrega un padding de 20 pixels entre los labels y la rosquilla
+            },
+            title: {
+                display: true,
+                text: 'Distribución de Ventas',
+                color: '#00ff7f',
+                font: {
+                    size: 30,
+                    weight: 'bold'
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.label + ': ' + tooltipItem.raw;
                     }
                 }
             }
-        });
+        },
+        cutout: '40%', // Tamaño del centro de la rosquilla
+        elements: {
+            arc: {
+                borderWidth: 2,
+                borderColor: 'white'
+            }
+        }
+    }
+});
     } catch (error) {
         console.error('Error al obtener los datos de ventas:', error);
     }
