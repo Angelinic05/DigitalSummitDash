@@ -660,12 +660,6 @@ body {
 
   
 
-      .bottom-row {
-        padding: 0% 10% 0% 10%;
-        display: flex; /* Establece el diseño en fila */
-        flex-direction: column;
-    }
-
     .bottom-row {
       padding: 0% 1% 0% 1%;
   }
