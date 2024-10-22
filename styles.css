@@ -301,7 +301,6 @@ body {
 }
 
 .time{
-
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -539,11 +538,18 @@ body {
     }
   
 
+
   .contenedor-principal {
       padding: 0;
       /* padding-left: 70px; */
       
     }
+
+    .time{
+      flex-direction: column;
+      gap: 6px;
+    }
+
 
     .bottom-row {
       padding: 0% 1% 0% 1%;
