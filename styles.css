@@ -632,6 +632,12 @@ body {
       left: 0;
       width: calc(100% - 0px);
     }
+
+    .time{
+      flex-direction: column;
+      gap: 6px;
+    }
+
   
 
       .bottom-row {
@@ -716,9 +722,9 @@ body {
         
     }
 
-    .contenedor-principal {
-        padding: 0;
-        
+    .time{
+      flex-direction: column;
+      gap: 6px;
     }
 
     .timer {
