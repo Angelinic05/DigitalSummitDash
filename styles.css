@@ -318,7 +318,7 @@ body {
 .bottom-row {
     padding: 0% 10% 0% 10%;
     display: grid; /* Establece el diseño en fila */
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 50% 50%;
 }
 
 .right-container {
