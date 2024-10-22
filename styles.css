@@ -304,7 +304,7 @@ body {
 
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  width: 100%;
 }
 
 .top-row {
