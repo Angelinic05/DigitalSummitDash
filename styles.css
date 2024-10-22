@@ -469,7 +469,7 @@ body {
 .sales-channels-table th, 
 .sales-channels-table td {
   padding: 15px; /* Espaciado interno */
-  text-align: left; /* Alinear texto a la izquierda */
+  text-align: center;
 }
 
 .sales-channels-table tr {
