@@ -469,22 +469,16 @@ body {
   margin-top: 20px;
 }
 
-.sales-channels-table thead {
+.sales-channels-table th {
+  padding: 15px; /* Espaciado interno */
+  text-align: center;
   background-color: var(--digital); /* Color de fondo del encabezado */
   color: rgb(0, 0, 0); /* Color del texto */
-
-}
-
-.sales-channels-table th, 
-.sales-channels-table td {
-  padding: 15px; /* Espaciado interno */
-  text-align: center;
 }
 
 .sales-channels-table td {
   padding: 15px; /* Espaciado interno */
   text-align: center;
-  border-bottom: 1px solid white;
 }
 
 .sales-channels-table td:first-child {
@@ -494,11 +488,7 @@ body {
 }
 
 .sales-channels-table tr:hover {
-  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
-}
-
-.sales-channels-table td {
-  color: #ffffff; /* Color del texto de las celdas */
+  background-color: #020c0057; /* Color de fondo al pasar el mouse */
 }
 
 
