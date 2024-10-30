@@ -1,11 +1,11 @@
 const totalStartDate = new Date('2024-07-01').getTime();
-const totalEndDate = new Date('2024-12-02').getTime();
+const totalEndDate = new Date('2024-12-03').getTime();
 
 const lote1EndDate = new Date('2024-08-31').getTime();
 const lote2StartDate = new Date('2024-09-01').getTime();
-const lote2EndDate = new Date('2024-10-31').getTime();
-const lote3StartDate = new Date('2024-11-01').getTime();
-const lote3EndDate = new Date('2024-12-02').getTime();
+const lote2EndDate = new Date('2024-11-01').getTime();
+const lote3StartDate = new Date('2024-11-02').getTime();
+const lote3EndDate = new Date('2024-12-03').getTime();
 
 function updateProgress() {
     const now = new Date().getTime();
