@@ -5,7 +5,7 @@ const lote1EndDate = new Date('2024-08-31').getTime();
 const lote2StartDate = new Date('2024-09-01').getTime();
 const lote2EndDate = new Date('2024-10-31T23:59:59').getTime(); // Fin de lote 2 el 31 de octubre a medianoche
 const lote3StartDate = new Date('2024-11-01').getTime();        // Inicio de lote 3 el 1 de noviembre
-const lote3EndDate = new Date('2024-12-01T23:59:59').getTime();  // Fin de lote 3 el 1 de diciembre a medianoche
+const lote3EndDate = new Date('2024-11-18T23:59:59').getTime();  // Fin de lote 3 el 1 de diciembre a medianoche
 
 function updateProgress() {
     const now = new Date().getTime();
@@ -45,16 +45,16 @@ function updateProgress() {
 
     if (now <= lote1EndDate) {
         document.getElementById('lote1-segment').classList.add('active');
-        document.getElementById('lote2-segment').classList.add('inactive');
+        document.getElementById('lote2-segment').classList.add('active');
         document.getElementById('lote3-segment').classList.add('inactive');
-    } else if (now <= lote2EndDate) {
-        const lote2Elapsed = now - lote2StartDate;
-        const lote2Progress = (lote2Elapsed / lote2Duration) * 100;
+    } else if (now <= lote3EndDate) {
+        const lote3Elapsed = now - lote3StartDate;
+        const lote3Progress = (lote3Elapsed / lote3Duration) * 100;
 
         document.getElementById('lote1-segment').classList.add('active');
         document.getElementById('lote2-segment').classList.add('active');
-        document.getElementById('lote2-segment').style.background = `linear-gradient(to right, #00ff7f ${lote2Progress}%, #008f4d ${lote2Progress}%)`;
-        document.getElementById('lote3-segment').classList.add('inactive');
+        document.getElementById('lote3-segment').classList.add('active');
+        document.getElementById('lote3-segment').style.background = `linear-gradient(to right, #00ff7f ${lote3Progress}%, #008f4d ${lote3Progress}%)`;
     } else {
         document.getElementById('lote1-segment').classList.add('active');
         document.getElementById('lote2-segment').classList.add('active');
